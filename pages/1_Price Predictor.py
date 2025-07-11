@@ -13,8 +13,16 @@ st.set_page_config(
 with open('df.pkl','rb') as file:
     df = pickle.load(file)
 
-with open('pipeline.pkl','rb') as file:
-    pipeline = pickle.load(file)
+# with open('pipeline.pkl','rb') as file:
+#     pipeline = pickle.load(file)
+
+import requests, pickle, io
+
+file_id = "https://drive.google.com/file/d/10V1zwQLr8lulYk-opoYlbPZaknwga0Dg/view?usp=drive_link"
+url = f"https://drive.google.com/uc?export=download&id={file_id}"
+
+response = requests.get(url)
+pipeline = pickle.load(io.BytesIO(response.content))
 
 # Header
 st.markdown("""
