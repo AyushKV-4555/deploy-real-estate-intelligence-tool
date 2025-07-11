@@ -18,9 +18,9 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load Data
-new_df = pd.read_csv('C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\data_viz1.csv')
-feature_text = pickle.load(open('C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\feature_text.pkl','rb'))
-wordcloud_df = pickle.load(open('C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\wordcloud_df.pkl','rb'))
+new_df = pd.read_csv('datasets/data_viz1.csv')
+feature_text = pickle.load(open('datasets/feature_text.pkl','rb'))
+wordcloud_df = pickle.load(open('datasets/wordcloud_df.pkl','rb'))
 
 # Preprocessing
 new_df = new_df.dropna(subset=['price', 'built_up_area'])

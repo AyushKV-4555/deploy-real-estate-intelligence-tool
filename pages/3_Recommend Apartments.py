@@ -11,15 +11,15 @@ st.set_page_config(
 )
 
 # Load data
-location_df = pickle.load(open('C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\location_distance2.pkl', 'rb'))
-cosine_sim1 = pickle.load(open('C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\cosine_sim1.pkl', 'rb'))
-cosine_sim2 = pickle.load(open('C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\cosine_sim2.pkl', 'rb'))
-cosine_sim3 = pickle.load(open('C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\cosine_sim3.pkl', 'rb'))
+location_df = pickle.load(open('datasets/location_distance2.pkl', 'rb'))
+cosine_sim1 = pickle.load(open('datasets/cosine_sim1.pkl', 'rb'))
+cosine_sim2 = pickle.load(open('datasets/cosine_sim2.pkl', 'rb'))
+cosine_sim3 = pickle.load(open('datasets/cosine_sim3.pkl', 'rb'))
 
 # Load property data with links
 # ADD THIS - Load your property data that contains the 'Link' column
 properties_df = pd.read_csv(
-    'C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\real_estate_data - real_estate_data.csv')
+    'datasets/real_estate_data - real_estate_data.csv')
 
 st.markdown("""
     <h1 style='text-align: center; color: #00c6a4; font-size: 42px;'>

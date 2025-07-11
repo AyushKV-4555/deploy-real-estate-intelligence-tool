@@ -11,7 +11,7 @@ st.set_page_config(
 # --- Load pre-calculated data for sector list only ---
 @st.cache_data
 def load_data():
-    return pd.read_csv("C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\roi_analysis_file2.csv")
+    return pd.read_csv("datasets/roi_analysis_file2.csv")
 
 df = load_data()
 

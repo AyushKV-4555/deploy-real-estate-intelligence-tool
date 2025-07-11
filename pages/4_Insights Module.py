@@ -7,7 +7,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import make_pipeline
 
 # --- Load data ---
-df = pd.read_csv("C:\\IMP\\REAL ESTATE ML Project ++\\Project-web-app\\datasets\\gurgaon_properties_post_feature_selection_v2.csv")
+df = pd.read_csv("datasets/gurgaon_properties_post_feature_selection_v2.csv")
 df = df.drop(columns=['store room', 'floor_category', 'balcony'])
 
 age_map = {'New Property': 0.1, 'Ready to Move': 0.5, 'Under Construction': 0.9}
