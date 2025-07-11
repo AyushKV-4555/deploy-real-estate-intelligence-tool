@@ -12,8 +12,7 @@ st.set_page_config(
 # Load assets
 with open('df.pkl','rb') as file:
     df = pickle.load(file)
-
-import requests, pickle, io
+import requests, joblib, io
 
 def download_from_google_drive(file_id):
     URL = "https://drive.google.com/uc?export=download"
@@ -34,12 +33,11 @@ def get_confirm_token(response):
             return value
     return None
 
-# Use your real file ID here
 file_id = "10V1zwQLr8lulYk-opoYlbPZaknwga0Dg"
-
-# Download and load your pickle model
 file_content = download_from_google_drive(file_id)
-pipeline = pickle.load(io.BytesIO(file_content))
+
+# ✅ Load using joblib
+pipeline = joblib.load(io.BytesIO(file_content))
 
 
 # Header
