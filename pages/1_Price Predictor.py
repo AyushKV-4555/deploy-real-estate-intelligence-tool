@@ -15,13 +15,32 @@ with open('df.pkl','rb') as file:
 
 import requests, pickle, io
 
+def download_from_google_drive(file_id):
+    URL = "https://drive.google.com/uc?export=download"
+
+    session = requests.Session()
+    response = session.get(URL, params={'id': file_id}, stream=True)
+    token = get_confirm_token(response)
+
+    if token:
+        params = {'id': file_id, 'confirm': token}
+        response = session.get(URL, params=params, stream=True)
+
+    return response.content
+
+def get_confirm_token(response):
+    for key, value in response.cookies.items():
+        if key.startswith('download_warning'):
+            return value
+    return None
+
+# Use your real file ID here
 file_id = "10V1zwQLr8lulYk-opoYlbPZaknwga0Dg"
-url = f"https://drive.google.com/uc?export=download&id={file_id}"
 
-response = requests.get(url)
-response.raise_for_status()
+# Download and load your pickle model
+file_content = download_from_google_drive(file_id)
+pipeline = pickle.load(io.BytesIO(file_content))
 
-pipeline = pickle.load(io.BytesIO(response.content))
 
 # Header
 st.markdown("""
