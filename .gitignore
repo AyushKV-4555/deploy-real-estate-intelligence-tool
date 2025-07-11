@@ -1,0 +1,9 @@
+# Ignore datasets
+datasets/*.csv
+datasets/*.pkl
+
+# Ignore backup and compiled files
+*.pkl
+*.csv
+__pycache__/
+*.ipynb_checkpoints
