@@ -12,33 +12,10 @@ st.set_page_config(
 # Load assets
 with open('df.pkl','rb') as file:
     df = pickle.load(file)
-import requests, joblib, io
 
-def download_from_google_drive(file_id):
-    URL = "https://drive.google.com/uc?export=download"
+import joblib
 
-    session = requests.Session()
-    response = session.get(URL, params={'id': file_id}, stream=True)
-    token = get_confirm_token(response)
-
-    if token:
-        params = {'id': file_id, 'confirm': token}
-        response = session.get(URL, params=params, stream=True)
-
-    return response.content
-
-def get_confirm_token(response):
-    for key, value in response.cookies.items():
-        if key.startswith('download_warning'):
-            return value
-    return None
-
-file_id = "10V1zwQLr8lulYk-opoYlbPZaknwga0Dg"
-file_content = download_from_google_drive(file_id)
-
-# ✅ Load using joblib
-pipeline = joblib.load(io.BytesIO(file_content))
-
+pipeline = joblib.load("pipeline.pkl")
 
 # Header
 st.markdown("""
