@@ -18,7 +18,7 @@ with open('df.pkl','rb') as file:
 
 import requests, pickle, io
 
-file_id = "https://drive.google.com/file/d/10V1zwQLr8lulYk-opoYlbPZaknwga0Dg/view?usp=drive_link"
+file_id = "https://drive.google.com/file/d/10V1zwQLr8lulYk-opoYlbPZaknwga0Dg/view?usp=sharing"
 url = f"https://drive.google.com/uc?export=download&id={file_id}"
 
 response = requests.get(url)
