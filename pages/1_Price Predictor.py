@@ -10,12 +10,12 @@ st.set_page_config(
 )
 
 # Load assets
-with open('df.pkl','rb') as file:
+with open(r'df.pkl','rb') as file:
     df = pickle.load(file)
 
 import joblib
 
-pipeline = joblib.load("pipeline.pkl")
+pipeline = joblib.load(r"pipeline.pkl")
 
 # Header
 st.markdown("""

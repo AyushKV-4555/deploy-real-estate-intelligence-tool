@@ -2,10 +2,10 @@ import streamlit as st
 from PIL import Image
 
 # Page configuration
-st.set_page_config(page_title="Gurgaon Real Estate Analytics", layout="wide")
+st.set_page_config(page_title="Property Investment Analytics Platform", layout="wide")
 
 # Title
-st.markdown("<h1 style='color:#00d4b1; text-align: center;'>🏡 Gurgaon Real Estate Analytics</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='color:#00d4b1; text-align: center;'>🏡 Property Investment Analytics Platform</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='text-align: center; color: white;'>Your Intelligent Partner to Predict Prices, "
             "Decode Market Trends & Find Your Ideal Home</h4>", unsafe_allow_html=True)
 st.markdown("---")
